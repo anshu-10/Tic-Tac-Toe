@@ -1,0 +1,141 @@
+:root {
+  --bg-light: #f4f4fa;
+  --bg-dark: #1e1e2f;
+  --primary-light: #e0d4fc;
+  --primary-dark: #533e85;
+  --accent-light: #b2f2bb;
+  --accent-dark: #74c69d;
+  --text-light: #1c1c1c;
+  --text-dark: #f0f0f0;
+  --box-bg-light: #ffffff;
+  --box-bg-dark: #2b2b40;
+  --win-color: #ffafcc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--box-bg-light);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+body.dark-theme .theme-toggle {
+  background: var(--box-bg-dark);
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+}
+
+.title {
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, var(--primary-dark), var(--accent-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vmin;
+  width: 60vmin;
+  height: 60vmin;
+}
+
+.box {
+  width: 18vmin;
+  height: 18vmin;
+  font-size: 8vmin;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--box-bg-light);
+  color: var(--primary-dark);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+body.dark-theme .box {
+  background-color: var(--box-bg-dark);
+  color: var(--primary-light);
+}
+
+.box:hover {
+  background-color: var(--accent-light);
+}
+
+body.dark-theme .box:hover {
+  background-color: var(--accent-dark);
+}
+
+#reset-btn, #new-btn {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--primary-dark);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#reset-btn:hover, #new-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+.msg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.hide {
+  display: none;
+}
+
+#msg {
+  font-size: 2rem;
+}
